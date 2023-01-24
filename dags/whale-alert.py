@@ -1,13 +1,13 @@
-
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 from datetime import datetime
 from airflow.decorators import dag, task 
 
+
 @dag(
     schedule_interval="@daily",
-    start_date=datetime(2021, 1, 1),
+    start_date=datetime(2022, 1, 1),
     catchup=False,
     default_args={
         "retries": 2,
@@ -25,21 +25,21 @@ def whale_alert():
         table_rows = table_body.find_all('tr')
         crypto_dict = {"datetime_utc": [], "crypto": [], "known": [], "unknown": []}
         current_utc = datetime.utcnow()
+        current_utc_str = current_utc.strftime("%Y%m%d")
 
-        if __name__ == "__main__":
-            for x in table_rows:
-                coin = x.find("i").get_text().strip()
-                td_list = x.find_all("td")
-                known = td_list[1].text
-                unknown = td_list[2].text
-                crypto_dict["datetime_utc"].append(current_utc)
-                crypto_dict["crypto"].append(coin)
-                crypto_dict["known"].append(known)
-                crypto_dict["unknown"].append(unknown)
-            whale_df = pd.DataFrame.from_dict(crypto_dict)
-            print(whale_df)
-        return "Hello World Extract Data"
+        for x in table_rows:
+            coin = x.find("i").get_text().strip()
+            td_list = x.find_all("td")
+            known = td_list[1].text
+            unknown = td_list[2].text
+            crypto_dict["datetime_utc"].append(current_utc)
+            crypto_dict["crypto"].append(coin)
+            crypto_dict["known"].append(known)
+            crypto_dict["unknown"].append(unknown)
+        whale_df = pd.DataFrame.from_dict(crypto_dict)
+        whale_df.to_csv(f"whale_alert_output{current_utc_str}.csv",index=False)
+        return "Properly obtain the information"
 
-    order_data = extract()
+    extract()
 
 whale_alert = whale_alert()

@@ -11,16 +11,17 @@ table_body = table.find('tbody')
 table_rows = table_body.find_all('tr')
 crypto_dict = {"datetime_utc": [], "crypto": [], "known": [], "unknown": []}
 current_utc = datetime.utcnow()
+current_utc_str = current_utc.strftime("%Y%m%d")
 
-if __name__ == "__main__":
-    for x in table_rows:
-        coin = x.find("i").get_text().strip()
-        td_list = x.find_all("td")
-        known = td_list[1].text
-        unknown = td_list[2].text
-        crypto_dict["datetime_utc"].append(current_utc)
-        crypto_dict["crypto"].append(coin)
-        crypto_dict["known"].append(known)
-        crypto_dict["unknown"].append(unknown)
-    whale_df = pd.DataFrame.from_dict(crypto_dict)
-    print(whale_df)
+for x in table_rows:
+    coin = x.find("i").get_text().strip()
+    td_list = x.find_all("td")
+    known = td_list[1].text
+    unknown = td_list[2].text
+    crypto_dict["datetime_utc"].append(current_utc)
+    crypto_dict["crypto"].append(coin)
+    crypto_dict["known"].append(known)
+    crypto_dict["unknown"].append(unknown)
+whale_df = pd.DataFrame.from_dict(crypto_dict)
+whale_df.to_csv(f"output/whale_alert_output{current_utc_str}.csv",index=False)
+print(whale_df)
