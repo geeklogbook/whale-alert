@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from datetime import datetime
 
-URL = "https://whale-alert.io/whales"
+URL = "https://whale-alert.io/whales.html"
 page = requests.get(URL)
 soup = BeautifulSoup(page.content, "html.parser")
 table = soup.find('table', attrs={'class': 'table'})
