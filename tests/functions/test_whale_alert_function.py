@@ -1,0 +1,3 @@
+from functions.whale_alert_scrapper import extract_transform_load
+
+extract_transform_load()
