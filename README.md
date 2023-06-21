@@ -1,12 +1,12 @@
-# Data Processes 
+# Data Processes for Is a Wale
 
-In this repositry you can find Airflow dags where I can generate diferent data process.
+In this repositry you can find a workflow where I try to understand: 'What is a whale' in terms of money and also in amount of crypto asset. In general we think about the whale as an amount of money. But I whant to know: how many BTCs, ETHs, and etc are whales. This amount is affected by the price fluctuations.
 
 ## Whale Alert 
 
 Whale alert is an scraper which can be used for known how many bitcoins, or other criyptocurrencies are considered a whale.
 
-![](whale-alert.png) 
+![](documentation/whale-alert.png) 
 
 # TODOS
 
