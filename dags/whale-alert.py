@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from datetime import datetime
 from airflow.decorators import dag, task 
+from airflow.providers.postgres.operators.postgres import PostgresOperator
+
 
 import os
 AIRFLOW_HOME = os.getenv('AIRFLOW_HOME')
