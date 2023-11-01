@@ -1,28 +1,72 @@
-<mxfile host="65bd71144e">
-    <diagram id="g-4mykPz83j2EvXcQWVF" name="whale-alert">
-        <mxGraphModel dx="1128" dy="420" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
-            <root>
-                <mxCell id="0"/>
-                <mxCell id="1" parent="0"/>
-                <mxCell id="9" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2" target="7" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="2" value="Whale Alert - Whales" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/home_page.svg;" parent="1" vertex="1">
-                    <mxGeometry x="50" y="70" width="50" height="45" as="geometry"/>
-                </mxCell>
-                <mxCell id="3" value="yyyymmdd.csv" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=#2D7600;fillColor=#60a917;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.csv_file;fontColor=#ffffff;" parent="1" vertex="1">
-                    <mxGeometry x="510" y="73.5" width="59" height="43" as="geometry"/>
-                </mxCell>
-                <mxCell id="10" style="edgeStyle=none;html=1;" parent="1" source="7" target="3" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="7" value="&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;scrapped-transformed-enriched-saved&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="160" y="75" width="300" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="11" value="whale-alert.py" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="10" y="10" width="600" height="170" as="geometry"/>
-                </mxCell>
-            </root>
-        </mxGraphModel>
-    </diagram>
+<mxfile host="Electron" modified="2023-11-01T13:51:42.463Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.0.3 Chrome/114.0.5735.289 Electron/25.8.4 Safari/537.36" version="22.0.3" etag="WP5NRXJseQvOzm6_3n9Y" type="device" pages="2">
+  <diagram id="g-4mykPz83j2EvXcQWVF" name="data-flow">
+    <mxGraphModel dx="1434" dy="884" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2" target="7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="2" value="Whale Alert - Whales" style="aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image;image=img/lib/active_directory/home_page.svg;" parent="1" vertex="1">
+          <mxGeometry x="165" y="144" width="50" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="3" value="yyyymmdd.csv" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=#2D7600;fillColor=#60a917;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.csv_file;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="625" y="147.5" width="59" height="43" as="geometry" />
+        </mxCell>
+        <mxCell id="10" style="edgeStyle=none;html=1;" parent="1" source="7" target="3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="&lt;div style=&quot;color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: Consolas, &amp;quot;Courier New&amp;quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px;&quot;&gt;&lt;div&gt;&lt;span style=&quot;color: #ce9178;&quot;&gt;scrapped-transformed-enriched-saved&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="275" y="149" width="300" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="11" value="whale-alert.py" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="125" y="84" width="600" height="170" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Hn1aRhbbh2IbaT1oylcI" name="architecture">
+    <mxGraphModel dx="1434" dy="884" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="NjYuKH1ZO1qIcbYzv5X0-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NjYuKH1ZO1qIcbYzv5X0-2" target="NjYuKH1ZO1qIcbYzv5X0-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NjYuKH1ZO1qIcbYzv5X0-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NjYuKH1ZO1qIcbYzv5X0-2" target="NjYuKH1ZO1qIcbYzv5X0-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NjYuKH1ZO1qIcbYzv5X0-2" value="geeklogbook -&amp;gt; whale-alert" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.github" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="75" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="NjYuKH1ZO1qIcbYzv5X0-3" value="Postgress Locall&#xa;" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;" vertex="1" parent="1">
+          <mxGeometry x="80" y="310" width="115" height="76.53" as="geometry" />
+        </mxCell>
+        <mxCell id="NjYuKH1ZO1qIcbYzv5X0-5" value="Cron that checks if the code is update" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="198" y="225" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NjYuKH1ZO1qIcbYzv5X0-6" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="NjYuKH1ZO1qIcbYzv5X0-3" target="NjYuKH1ZO1qIcbYzv5X0-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="480" as="sourcePoint" />
+            <mxPoint x="450" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NjYuKH1ZO1qIcbYzv5X0-7" value="Docker -&amp;gt; Airflow" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="274" y="42" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NjYuKH1ZO1qIcbYzv5X0-9" value="Must run every day at 00 UTC" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="463" width="575" height="153" as="geometry" />
+        </mxCell>
+        <mxCell id="NjYuKH1ZO1qIcbYzv5X0-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="NjYuKH1ZO1qIcbYzv5X0-10" target="NjYuKH1ZO1qIcbYzv5X0-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="NjYuKH1ZO1qIcbYzv5X0-10" value="Must Save the information in a place&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="272" y="119" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NjYuKH1ZO1qIcbYzv5X0-12" value="CSV" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="119" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
 </mxfile>
