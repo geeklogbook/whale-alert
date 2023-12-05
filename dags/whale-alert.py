@@ -1,56 +1,40 @@
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
-from datetime import datetime
-from airflow.decorators import dag, task 
-from airflow.providers.postgres.operators.postgres import PostgresOperator
+from datetime import datetime, timedelta
+from airflow import DAG
+# from bs4 import BeautifulSoup
+import logging
+from airflow.operators.python_operator import PythonOperator
 
 
-import os
-AIRFLOW_HOME = os.getenv('AIRFLOW_HOME')
+default_args = {
+    'owner': 'jc',
+    'start_date': datetime(2023, 1, 1),
+    'retries': 1,
+    'retry_delay': timedelta(minutes=5),
+}
 
-@dag(
-    schedule_interval="@daily",
-    start_date=datetime(2022, 1, 1),
-    catchup=False,
-    default_args={
-        "retries": 2,
-    },
-    tags=['example'])
-def whale_alert():
+dag = DAG(
+    'whale-alert',
+    default_args=default_args,
+    schedule_interval=timedelta(days=1),  # Set the execution interval, in this case, daily
+)
 
-    @task()
-    def extract():
-        URL = "https://whale-alert.io/whales.html"
-        page = requests.get(URL)
-        soup = BeautifulSoup(page.content, "html.parser")
-        table = soup.find('table', attrs={'class': 'table'})
-        table_body = table.find('tbody')
-        table_rows = table_body.find_all('tr')
-        crypto_dict = {
-            "datetime_utc": [], 
-            "crypto": [], 
-            "known": [], 
-            "unknown": []}
-        current_utc = datetime.utcnow()
-        current_utc_str = current_utc.strftime("%Y%m%d")
 
-        for x in table_rows:
-            coin = x.find("td").get_text().strip()
-            td_list = x.find_all("td")
-            known = td_list[1].text
-            unknown = td_list[2].text
-            crypto_dict["datetime_utc"].append(current_utc)
-            crypto_dict["crypto"].append(coin)
-            crypto_dict["known"].append(known)
-            crypto_dict["unknown"].append(unknown)
-        
-        whale_df = pd.DataFrame.from_dict(crypto_dict)
+def whale_alert_extraction():
+    try:
+        # Your logic for whale alert extraction here
+        logging.info("Whale Alert Extraction completed successfully.")
+        return "Whale Alert Extraction"
+    except Exception as e:
+        logging.error(f"Error in Whale Alert Extraction: {str(e)}")
+        raise
 
-        path = f'{AIRFLOW_HOME}/dags/output/{current_utc_str}.csv'
-        whale_df.to_csv(path, index=False)
-        return "scrapped-transformed-enriched-saved"
 
-    extract()
+# Create a PythonOperator task that will execute the hello_world_function
+whale_alert_task = PythonOperator(
+    task_id='whale_alert_extraction',
+    python_callable=whale_alert_extraction,
+    dag=dag
+)
 
-whale_alert = whale_alert()
+# Set the task dependencies (in this case, there are no dependencies)
+whale_alert_extraction
