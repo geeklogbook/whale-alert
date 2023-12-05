@@ -4,3 +4,4 @@ airflow_settings.yaml
 astro
 __pycache__/
 .venv
+airfow-data/
