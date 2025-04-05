@@ -102,8 +102,6 @@ services:
     restart: always
 
   redis:
-    # Redis is limited to 7.2-bookworm due to licencing change
-    # https://redis.io/blog/redis-adopts-dual-source-available-licensing/
     image: redis:7.2-bookworm
     expose:
       - 6379
@@ -161,8 +159,6 @@ services:
       start_period: 30s
     environment:
       <<: *airflow-common-env
-      # Required to handle warm shutdown of the celery workers properly
-      # See https://airflow.apache.org/docs/docker-stack/entrypoint.html#signal-propagation
       DUMB_INIT_SETSID: "0"
     restart: always
     depends_on:
