@@ -1,0 +1,52 @@
+<mxfile host="Electron" modified="2025-04-05T14:49:31.011Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.6.4 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="ROyZogbX38Hi97pI_VCG" version="24.6.4" type="device">
+  <diagram name="Page-1" id="7hBCX-APXNBAThtaHJVX">
+    <mxGraphModel dx="1034" dy="612" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lmthTPy6gE61zdj-pGuH-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="lmthTPy6gE61zdj-pGuH-1" target="lmthTPy6gE61zdj-pGuH-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lmthTPy6gE61zdj-pGuH-1" value="whale-alert (ballenas)&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.web2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="120" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lmthTPy6gE61zdj-pGuH-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="lmthTPy6gE61zdj-pGuH-2" target="lmthTPy6gE61zdj-pGuH-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lmthTPy6gE61zdj-pGuH-2" value="scrapper" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="135" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lmthTPy6gE61zdj-pGuH-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="lmthTPy6gE61zdj-pGuH-4" target="lmthTPy6gE61zdj-pGuH-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lmthTPy6gE61zdj-pGuH-4" value="E" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lmthTPy6gE61zdj-pGuH-5" value="T" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lmthTPy6gE61zdj-pGuH-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="lmthTPy6gE61zdj-pGuH-6" target="lmthTPy6gE61zdj-pGuH-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lmthTPy6gE61zdj-pGuH-6" value="L" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="440" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lmthTPy6gE61zdj-pGuH-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="lmthTPy6gE61zdj-pGuH-11" target="lmthTPy6gE61zdj-pGuH-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lmthTPy6gE61zdj-pGuH-11" value="Minio/S3&lt;div&gt;&amp;nbsp;- Bronze&lt;/div&gt;" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.s3;fillColor=#E05243;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="420" y="103.5" width="76.5" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="lmthTPy6gE61zdj-pGuH-13" value="Minio/S3&lt;div&gt;&amp;nbsp;- Silver&lt;/div&gt;" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.s3;fillColor=#E05243;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="570" y="103.5" width="76.5" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="lmthTPy6gE61zdj-pGuH-16" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="44" width="660" height="236" as="geometry" />
+        </mxCell>
+        <mxCell id="lmthTPy6gE61zdj-pGuH-17" value="Airflow" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="646.5" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
