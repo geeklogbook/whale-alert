@@ -1,0 +1,44 @@
+<mxfile host="Electron" modified="2023-07-17T02:52:55.240Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.1 Chrome/112.0.5615.204 Electron/24.6.1 Safari/537.36" etag="V8enQSshDHzv2yB-BCX8" version="21.6.1" type="device">
+  <diagram id="oZVx_wMzlCauOuRCb9Kt" name="Ingestion">
+    <mxGraphModel dx="864" dy="516" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="_2a_DQ48qsTsAhmX32mk-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="_2a_DQ48qsTsAhmX32mk-3" target="_2a_DQ48qsTsAhmX32mk-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_2a_DQ48qsTsAhmX32mk-3" value="Whale Alert Web Page" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" parent="1" vertex="1">
+          <mxGeometry x="109" y="84" width="50" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="_2a_DQ48qsTsAhmX32mk-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="_2a_DQ48qsTsAhmX32mk-4" target="_2a_DQ48qsTsAhmX32mk-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_2a_DQ48qsTsAhmX32mk-4" value="Coin Gueko API" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" parent="1" vertex="1">
+          <mxGeometry x="109" y="206" width="50" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="_2a_DQ48qsTsAhmX32mk-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="_2a_DQ48qsTsAhmX32mk-5" target="_2a_DQ48qsTsAhmX32mk-10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="279" y="65" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jOv9U8CZew_HO3y7e4te-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="_2a_DQ48qsTsAhmX32mk-5" target="_2a_DQ48qsTsAhmX32mk-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_2a_DQ48qsTsAhmX32mk-5" value="Web Scrapping" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="229" y="96" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_2a_DQ48qsTsAhmX32mk-7" value="API Request" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="229" y="218" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="_2a_DQ48qsTsAhmX32mk-9" value="Request Only for Currencies obtained" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="289" y="149" width="228" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="_2a_DQ48qsTsAhmX32mk-10" value="save csv yyyymmdd" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/bootstrap-vol-3/16/filetype-csv-128.png" parent="1" vertex="1">
+          <mxGeometry x="369" y="46" width="38" height="38" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

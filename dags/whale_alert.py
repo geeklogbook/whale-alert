@@ -15,8 +15,8 @@ SECRET_KEY = "minio123"
     schedule="@daily",
     start_date=datetime(2022, 1, 1),
     catchup=False,
-    default_args={"retries": 2},
-    tags=['whale-alert']
+    default_args={"retries": 1},
+    tags=['whale_alert']
 )
 def whale_alert():
 
@@ -51,32 +51,7 @@ def whale_alert():
         except Exception as e:
             return f"Extraction failed: {e}"
 
-    @task()
-    def transform(object_name):
-        s3_client = boto3.client(
-            's3',
-            endpoint_url=ENDPOINT_URL,
-            aws_access_key_id=ACCESS_KEY,
-            aws_secret_access_key=SECRET_KEY
-        )
 
-        try:
-            obj = s3_client.get_object(Bucket=BUCKET_NAME, Key=object_name)
-            df = pd.read_csv(obj['Body'])
-
-            for col in ['crypto', 'known', 'unknown']:
-                df[col] = df[col].astype(str).str.replace(r'[$,]', '', regex=True).replace('-', '0').astype(float)
-
-            transformed_name = object_name.replace("bronze/", "silver/")
-            transformed_csv = df.to_csv(index=False)
-
-            s3_client.put_object(Bucket=BUCKET_NAME, Key=transformed_name, Body=transformed_csv)
-            return f"Transformed data saved as {transformed_name}"
-        except (BotoCoreError, NoCredentialsError) as e:
-            return f"MinIO operation failed: {e}"
-        except Exception as e:
-            return f"Transformation failed: {e}"
-
-    transform(extract())
+    extract()
 
 whale_alert()
