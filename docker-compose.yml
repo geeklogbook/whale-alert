@@ -281,16 +281,18 @@ services:
         condition: service_completed_successfully
 
   minio:
-      image: bitnami/minio:latest
+      image: minio/minio
       container_name: data-lake
+      command: server /data --console-address ":9001"
       ports:
         - "9000:9000"
         - "9001:9001"
       volumes:
-        - minio_data:/bitnami/minio/data
+        - minio_data:/data
       environment:
         - MINIO_ROOT_USER=minio
         - MINIO_ROOT_PASSWORD=minio123
+      restart: always
 
 volumes:
   postgres-db-volume:
