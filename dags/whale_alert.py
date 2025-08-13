@@ -1,29 +1,29 @@
-import requests
+from airflow.decorators import dag, task
+from datetime import datetime, timezone
 from bs4 import BeautifulSoup
 import pandas as pd
-from datetime import datetime
-from airflow.decorators import dag, task
+import requests
 import boto3
-from botocore.exceptions import BotoCoreError, NoCredentialsError
 
-BUCKET_NAME = "whale-alert"
 ENDPOINT_URL = "http://data-lake:9000"
+BUCKET_NAME = "whale-alert"
 ACCESS_KEY = "minio"
 SECRET_KEY = "minio123"
 
 @dag(
-    schedule="@daily",
+    schedule=None,
     start_date=datetime(2022, 1, 1),
     catchup=False,
     default_args={"retries": 1},
     tags=['whale_alert']
 )
+
 def whale_alert():
 
     @task()
-    def extract():
+    def extract_and_upload():
         url = "https://whale-alert.io/whales.html"
-        timestamp = datetime.utcnow().strftime('%Y%m%d_%H%M%S')
+        timestamp = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')
         object_name = f"bronze/{timestamp}.csv"
 
         try:
@@ -31,7 +31,7 @@ def whale_alert():
             table_rows = soup.select("table.table tbody tr")
 
             data = {
-                "datetime_utc": [datetime.utcnow()] * len(table_rows),
+                "datetime_utc": [datetime.now(timezone.utc)] * len(table_rows),
                 "crypto": [row.find("td").text.strip() for row in table_rows],
                 "known": [row.find_all("td")[1].text for row in table_rows],
                 "unknown": [row.find_all("td")[2].text for row in table_rows]
@@ -47,11 +47,10 @@ def whale_alert():
             )
 
             s3_client.put_object(Bucket=BUCKET_NAME, Key=object_name, Body=csv_data)
-            return object_name  
+            return object_name
         except Exception as e:
             return f"Extraction failed: {e}"
 
+    extract_and_upload()
 
-    extract()
-
-whale_alert()
+dag = whale_alert()

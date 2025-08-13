@@ -1,12 +1,11 @@
-from datetime import datetime
-from airflow import DAG
 from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.operators.dummy import DummyOperator
 from airflow.utils.dates import days_ago
+from airflow import DAG
 
 default_args = {
     'owner': 'airflow',
-    'start_date': days_ago(1),  # Usamos una fecha del pasado reciente
+    'start_date': days_ago(1), 
 }
 
 dag = DAG(
@@ -42,7 +41,7 @@ trigger_minio = TriggerDagRunOperator(
 
 trigger_whale_alert = TriggerDagRunOperator(
     task_id='trigger_whale_alert',
-    trigger_dag_id='whale-alert',
+    trigger_dag_id='whale_alert',
     wait_for_completion=True,
     execution_date='{{ execution_date }}',
     reset_dag_run=True,
